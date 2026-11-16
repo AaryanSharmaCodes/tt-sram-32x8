@@ -14,8 +14,8 @@ use_specified_corners = [CORNERS[os.environ.get("CHAR_CORNER", "TT")]]
 analytical_delay = False
 spice_name = "ngspice"
 num_sim_threads = int(os.environ.get("CHAR_THREADS", "4"))
-slew_scales = [10, 40, 160]      # x rise_time 0.005 ns  -> 0.05, 0.2, 0.8 ns
-load_scales = [0.5, 2, 8]        # x dff_in_cap 6.89 fF  -> 3.445, 13.78, 55.12 fF
+slew_scales = [10, 160]          # x rise_time 0.005 ns  -> 0.05, 0.8 ns  (2x2 hedge run)
+load_scales = [0.5, 8]           # x dff_in_cap 6.89 fF  -> 3.445, 55.12 fF  (2x2 hedge run)
 output_path = "char/{}/".format(os.environ.get("CHAR_CORNER", "TT"))
 # sky130_custom_cell storage nets (see its subckt in the macro .sp); read by flow/openram/openram_memchar_storage_names.diff
 memchar_storage_names = ("Q", "Qbar")
