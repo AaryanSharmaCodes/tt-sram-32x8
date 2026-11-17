@@ -19,3 +19,5 @@ load_scales = [0.5, 8]           # x dff_in_cap 6.89 fF  -> 3.445, 55.12 fF  (2x
 output_path = "char/{}/".format(os.environ.get("CHAR_CORNER", "TT"))
 # sky130_custom_cell storage nets (see its subckt in the macro .sp); read by flow/openram/openram_memchar_storage_names.diff
 memchar_storage_names = ("Q", "Qbar")
+# characterize.sh already runs OpenRAM inside the Nix shell; don't start a new `nix develop` for every ngspice call
+use_nix = False
